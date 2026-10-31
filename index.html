@@ -5,192 +5,330 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>מישראל לאוסטרליה · המדריך המלא | Come to Australia</title>
 <meta name="description" content="המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה: 111 פרקים בעברית, בחינם. מאת Come to Australia.">
+<meta name="theme-color" content="#1f5c58">
 <meta property="og:title" content="מישראל לאוסטרליה: המדריך המלא">
 <meta property="og:description" content="111 פרקים בעברית על ההחלטה, הוויזה, הנחיתה והחיים באוסטרליה. בחינם.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cometoaustralia.fyi/">
+<meta property="og:image" content="https://cometoaustralia.fyi/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5c58'/%3E%3Cpath fill='%23f0b429' d='M50 40v-4l-14-9V17a3 3 0 0 0-6 0v10l-14 9v4l14-4.5V45l-4 3v3l7-2 7 2v-3l-4-3v-9.5z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap">
 <style>
-/* Concept: Australia's green and gold (eucalyptus + wattle) on a pale sky. One bold element:
-   the sign-up form as a boarding pass from Tel Aviv. Everything else stays quiet. */
+/* World: Australia's green and gold (eucalyptus + wattle) on a pale sky.
+   Signature: the flight path TLV → AUS, drawn once in the hero and echoed on the boarding-pass form. */
 :root {
   --eucalyptus: #1f5c58;
-  --eucalyptus-deep: #143f3c;
+  --eucalyptus-deep: #123b38;
+  --eucalyptus-soft: #2c716c;
   --wattle: #f0b429;
+  --wattle-hi: #f7c94e;
   --sky: #f3f7f8;
-  --ink: #1b2826;
   --paper: #ffffff;
-  --muted: #5b6b68;
-  --line: #d6e2df;
+  --ink: #17231f;
+  --muted: #55665f;
+  --line: #d8e3e0;
+  --on-green: #e3efec;
+  --on-green-muted: #b9d3cd;
   --display: "Frank Ruhl Libre", "Noto Serif Hebrew", serif;
   --body: "Assistant", "Noto Sans Hebrew", system-ui, sans-serif;
+  --radius: 14px;
+  --shadow: 0 18px 40px -18px rgba(18, 59, 56, .35), 0 2px 6px rgba(18, 59, 56, .08);
+  --ease: cubic-bezier(.16, 1, .3, 1);
   color-scheme: light;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
-body { margin: 0; background: var(--sky); color: var(--ink); font: 18px/1.65 var(--body); }
-a { color: var(--eucalyptus); }
-:focus-visible { outline: 3px solid var(--wattle); outline-offset: 3px; }
-.wrap { max-width: 68rem; margin-inline: auto; padding-inline: max(20px, 4vw); }
-h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+body { margin: 0; background: var(--sky); color: var(--ink); font: 18px/1.7 var(--body);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: var(--wattle); color: var(--eucalyptus-deep); }
+a { color: var(--eucalyptus); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 3px solid var(--wattle); outline-offset: 3px; border-radius: 6px; }
+input, select { caret-color: var(--eucalyptus); }
+.wrap { max-width: 70rem; margin-inline: auto; padding-inline: max(20px, 4vw); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.12; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+.ltr { direction: ltr; unicode-bidi: isolate; }
+.icon { width: 1em; height: 1em; flex: none; }
 
-/* Hero */
-.hero { background: var(--eucalyptus); color: #fff; padding-block: 56px 72px; overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
-.brand { font-weight: 700; letter-spacing: .04em; color: var(--wattle); margin: 0 0 28px; direction: ltr; text-align: right; }
-.hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 900; }
-.hero .sub { font-size: 1.25rem; margin: 18px 0 30px; max-width: 34rem; color: #e4efec; }
-.btn { display: inline-block; font: 700 1.1rem var(--body); text-decoration: none; border: 0; cursor: pointer;
-  background: var(--wattle); color: var(--eucalyptus-deep); padding: 14px 28px; border-radius: 999px; }
-.btn:hover { background: #f6c64f; }
+/* Header */
+.topbar { position: sticky; top: 0; z-index: 20; background: rgba(18, 59, 56, .92);
+  backdrop-filter: saturate(140%) blur(10px); -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.mark { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: .02em; }
+.mark svg { width: 30px; height: 30px; }
+.btn { display: inline-flex; align-items: center; gap: .5em; font: 700 1.05rem/1 var(--body); text-decoration: none;
+  border: 0; cursor: pointer; background: var(--wattle); color: var(--eucalyptus-deep); padding: 15px 28px; border-radius: 999px;
+  box-shadow: 0 10px 24px -12px rgba(240, 180, 41, .9); transition: transform .25s var(--ease), background .2s, box-shadow .25s var(--ease); }
+.btn:hover { background: var(--wattle-hi); transform: translateY(-1px); box-shadow: 0 14px 28px -12px rgba(240, 180, 41, .95); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: .7; cursor: progress; transform: none; }
+.btn.small { padding: 10px 18px; font-size: .95rem; box-shadow: none; }
 .btn.ghost { background: transparent; color: var(--eucalyptus); box-shadow: inset 0 0 0 2px var(--eucalyptus); }
 .btn.ghost:hover { background: var(--eucalyptus); color: #fff; }
-.fine { font-size: .92rem; color: #cfe0dc; margin: 14px 0 0; }
-.cover { justify-self: center; width: min(300px, 100%); aspect-ratio: 17 / 24; background: var(--paper); color: var(--eucalyptus);
-  border-radius: 6px 14px 14px 6px; padding: 34px 28px; display: flex; flex-direction: column; justify-content: space-between;
-  box-shadow: -18px 22px 0 var(--eucalyptus-deep); border-right: 10px solid var(--wattle); transform: rotate(-3deg); }
-.cover strong { font: 900 2rem/1.1 var(--display); }
-.cover span { font-size: .95rem; color: var(--muted); }
-.cover em { font-style: normal; font-weight: 700; direction: ltr; text-align: right; color: var(--eucalyptus); }
+
+/* Hero */
+.hero { position: relative; background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(240, 180, 41, .16), transparent 60%),
+    linear-gradient(160deg, var(--eucalyptus) 0%, var(--eucalyptus-deep) 100%);
+  color: #fff; overflow: hidden; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: center;
+  padding-block: 76px 96px; }
+.flight { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.flight path.trail { fill: none; stroke: var(--wattle); stroke-width: 2; stroke-dasharray: 2 10; stroke-linecap: round; opacity: .55; }
+.flight path.draw { fill: none; stroke: var(--wattle); stroke-width: 2; stroke-linecap: round; opacity: .9;
+  stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: draw 2.4s .3s var(--ease) forwards; }
+.flight .pin { fill: var(--wattle); }
+.flight text { font: 700 15px var(--body); fill: var(--on-green-muted); letter-spacing: .08em; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.hero h1 { font-size: clamp(2.9rem, 6.4vw, 5.2rem); font-weight: 900; letter-spacing: -.02em; }
+.hero .sub { font-size: clamp(1.15rem, 1.6vw, 1.32rem); margin: 22px 0 32px; max-width: 33rem; color: var(--on-green); line-height: 1.6; }
+.hero-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.facts { display: flex; gap: 26px; margin-top: 36px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .14);
+  color: var(--on-green-muted); font-size: .95rem; flex-wrap: wrap; }
+.facts b { display: block; font: 900 1.7rem/1.1 var(--display); color: #fff; font-variant-numeric: lining-nums; }
+.book { justify-self: center; position: relative; width: min(310px, 100%); aspect-ratio: 17 / 24; perspective: 1400px; }
+.book .cover { position: absolute; inset: 0; border-radius: 4px 12px 12px 4px; background:
+    linear-gradient(90deg, rgba(0,0,0,.12) 0 6px, transparent 14px), var(--paper);
+  color: var(--eucalyptus); padding: 34px 28px 30px; display: flex; flex-direction: column;
+  transform: rotateY(-14deg) rotateZ(-2deg); transform-origin: right center;
+  box-shadow: -28px 34px 60px -20px rgba(0, 0, 0, .55), -2px 0 0 #e9efed; }
+.book .cover::after { content: ""; position: absolute; inset-block: 0; inset-inline-end: 0; width: 10px; background: var(--wattle); border-radius: 0 12px 12px 0; }
+.cover .t { font: 900 2.15rem/1.05 var(--display); letter-spacing: -.01em; }
+.cover .rule { width: 44px; height: 3px; background: var(--wattle); margin: 18px 0; border-radius: 2px; }
+.cover .s { font-size: .95rem; color: var(--muted); line-height: 1.5; }
+.cover .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: end; font-size: .82rem; color: var(--muted); }
+.cover .foot b { font-weight: 700; color: var(--eucalyptus); direction: ltr; }
 
 /* Sections */
-section { padding-block: 64px; }
-.lead { font-size: 1.15rem; max-width: 42rem; color: var(--muted); margin: 14px 0 0; }
-h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); color: var(--eucalyptus); }
-.parts { list-style: none; padding: 0; margin: 34px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 36px; }
-.parts li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+section.block { padding-block: 92px; }
+.head { max-width: 44rem; margin-bottom: 40px; }
+h2 { font-size: clamp(2rem, 3.8vw, 2.9rem); color: var(--eucalyptus-deep); font-weight: 900; }
+.lead { font-size: 1.15rem; color: var(--muted); margin: 14px 0 0; }
+
+.parts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px;
+  counter-reset: part; }
+.parts li { display: grid; grid-template-columns: 2.4rem 1fr auto; align-items: baseline; gap: 10px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.parts i { font: 700 .95rem var(--display); font-style: normal; color: #8a6408; }
 .parts b { font-weight: 600; }
-.parts small { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 30px; }
-.who p { margin: 0; padding-top: 14px; border-top: 4px solid var(--wattle); font-size: 1.1rem; }
-.who b { display: block; font-family: var(--display); font-size: 1.35rem; color: var(--eucalyptus); }
+.parts small { color: var(--muted); white-space: nowrap; font-size: .85rem; font-variant-numeric: tabular-nums; }
+
+.anatomy { background: var(--paper); }
+.anatomy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px 48px; }
+.anatomy-grid div { padding-top: 18px; border-top: 2px solid var(--eucalyptus); }
+.anatomy-grid h3 { font-size: 1.35rem; color: var(--eucalyptus); margin-bottom: 6px; }
+.anatomy-grid p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+
+.who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.who article { background: var(--paper); border-radius: var(--radius); padding: 30px 28px 32px; box-shadow: var(--shadow); }
+.who svg { width: 34px; height: 34px; color: var(--eucalyptus); margin-bottom: 14px; }
+.who h3 { font-size: 1.5rem; color: var(--eucalyptus-deep); margin-bottom: 6px; }
+.who p { margin: 0; color: var(--muted); }
 
 /* Boarding pass */
-.pass-section { background: var(--paper); }
-.pass { display: grid; grid-template-columns: 1fr 220px; background: var(--sky); border-radius: 18px; margin-top: 30px;
-  border: 1px solid var(--line); position: relative; }
-.pass-main { padding: 30px 34px; }
-.route { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; font-family: var(--display); }
-.route .code { font-size: 2.2rem; font-weight: 900; color: var(--eucalyptus); direction: ltr; }
-.route .city { display: block; font: 600 .95rem var(--body); color: var(--muted); }
-.route .plane { flex: 1; height: 2px; background: repeating-linear-gradient(to left, var(--eucalyptus) 0 8px, transparent 8px 14px); position: relative; }
-.route .plane::after { content: "✈"; position: absolute; inset-inline-end: 45%; top: -15px; font-size: 1.3rem; color: var(--eucalyptus); transform: scaleX(-1); }
-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
-label { display: grid; gap: 6px; font-weight: 600; font-size: .98rem; }
+.get { background: linear-gradient(180deg, var(--paper) 0%, var(--sky) 100%); }
+.pass { display: grid; grid-template-columns: 1fr 230px; background: var(--paper); border-radius: 20px; position: relative;
+  box-shadow: 0 30px 70px -30px rgba(18, 59, 56, .45), 0 2px 8px rgba(18, 59, 56, .08); }
+.pass-main { padding: 36px 40px 40px; }
+.route { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; margin-bottom: 28px; }
+.route .code { display: block; font: 900 2.4rem/1 var(--display); color: var(--eucalyptus-deep); direction: ltr; }
+.route .city { display: block; font-size: .9rem; color: var(--muted); margin-top: 4px; }
+.route-line { position: relative; height: 40px; color: var(--eucalyptus); }
+.route-line svg { width: 100%; height: 40px; display: block; }
+.route-line .plane-ic { position: absolute; top: 2px; left: 50%; width: 24px; height: 24px; transform: translateX(-50%) rotate(-90deg); }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 22px; }
+label { display: grid; gap: 7px; font-weight: 600; font-size: .95rem; color: var(--eucalyptus-deep); }
 .full { grid-column: 1 / -1; }
-input[type=text], input[type=email], select { font: 400 1.05rem var(--body); padding: 12px 14px; border: 1.5px solid #b9cbc7;
-  border-radius: 10px; background: var(--paper); color: var(--ink); width: 100%; }
-input:focus, select:focus { border-color: var(--eucalyptus); outline: none; box-shadow: 0 0 0 3px #f0b42966; }
-.consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: .95rem; color: var(--muted); }
-.consent input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--eucalyptus); }
+input[type=text], input[type=email], select { font: 400 1.05rem var(--body); padding: 13px 15px; border: 1.5px solid #c3d3cf;
+  border-radius: 12px; background: var(--sky); color: var(--ink); width: 100%; transition: border-color .2s, box-shadow .2s, background .2s; }
+input:hover, select:hover { border-color: #a6bdb8; }
+input:focus, select:focus { border-color: var(--eucalyptus); background: var(--paper); outline: none; box-shadow: 0 0 0 4px rgba(240, 180, 41, .35); }
+.consent { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; font-size: .95rem; color: var(--muted); cursor: pointer; }
+.consent input { width: 20px; height: 20px; margin-top: 4px; accent-color: var(--eucalyptus); flex: none; }
 .error { color: #a12b2b; font-weight: 600; margin: 0; }
-.stub { border-inline-start: 2px dashed #b9cbc7; padding: 30px 22px; display: flex; flex-direction: column; justify-content: center; gap: 10px; text-align: center; }
-.stub .label { color: var(--muted); font-size: .9rem; }
-.stub .val { font: 900 1.6rem var(--display); color: var(--eucalyptus); }
-.pass::before, .pass::after { content: ""; position: absolute; width: 26px; height: 26px; border-radius: 50%; background: var(--paper);
-  inset-inline-end: 207px; border: 1px solid var(--line); }
-.pass::before { top: -14px; } .pass::after { bottom: -14px; }
+.submit-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.submit-row small { color: var(--muted); }
+.stub { position: relative; border-inline-start: 2px dashed var(--line); padding: 36px 26px; display: flex; flex-direction: column; justify-content: center; gap: 22px;
+  background: var(--eucalyptus); color: var(--on-green); border-radius: 20px 0 0 20px; text-align: center; }
+.stub .label { color: var(--on-green-muted); font-size: .85rem; }
+.stub .val { font: 900 1.9rem/1.1 var(--display); color: #fff; font-variant-numeric: lining-nums; }
+.stub .val.gold { color: var(--wattle); }
+.notch { position: absolute; width: 30px; height: 30px; border-radius: 50%; background: var(--sky); inset-inline-end: 214px; }
+.notch.top { top: -15px; } .notch.bottom { bottom: -15px; }
 
-.done { display: grid; gap: 18px; }
-.done h3 { font-size: 1.8rem; color: var(--eucalyptus); }
+.done { display: grid; gap: 16px; animation: rise .6s var(--ease); }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+.done .ok { display: flex; align-items: center; gap: 12px; }
+.done .ok svg { width: 40px; height: 40px; color: var(--eucalyptus); }
+.done h3 { font-size: 1.9rem; color: var(--eucalyptus-deep); }
 .done p { margin: 0; }
-.meet { margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--line); }
-.privacy { font-size: .9rem; color: var(--muted); margin: 14px 0 0; }
+.meet { margin-top: 8px; padding: 22px 24px; border-radius: 14px; background: var(--sky); }
+.meet p + p { margin-top: 14px; }
+.privacy { font-size: .9rem; color: var(--muted); margin: 18px 4px 0; }
 
-footer { background: var(--eucalyptus-deep); color: #d9e7e4; padding-block: 40px; font-size: .95rem; }
-footer .wrap { display: grid; gap: 12px; }
+footer { background: var(--eucalyptus-deep); color: var(--on-green-muted); padding-block: 48px; font-size: .95rem; }
+footer .wrap { display: grid; gap: 14px; }
+footer .mark { color: #fff; }
 footer a { color: var(--wattle); }
 footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
-.ltr { direction: ltr; unicode-bidi: isolate; }
+footer p { margin: 0; max-width: 46rem; }
 
-@media (max-width: 860px) {
-  .hero .wrap { grid-template-columns: 1fr; }
-  .cover { width: 220px; order: -1; justify-self: start; }
+@media (max-width: 920px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 40px; padding-block: 48px 64px; }
+  .book { width: 210px; order: -1; justify-self: start; }
   .parts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .who { grid-template-columns: 1fr; gap: 18px; }
+  .anatomy-grid, .who { grid-template-columns: 1fr 1fr; }
   .pass { grid-template-columns: 1fr; }
-  .stub { border-inline-start: 0; border-top: 2px dashed #b9cbc7; flex-direction: row; justify-content: space-around; }
-  .pass::before, .pass::after { display: none; }
+  .stub { flex-direction: row; justify-content: space-around; border-inline-start: 0; border-top: 2px dashed var(--line); border-radius: 0 0 20px 20px; padding: 24px; }
+  .notch { display: none; }
 }
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   body { font-size: 17px; }
-  .parts { grid-template-columns: 1fr; }
-  form { grid-template-columns: 1fr; }
-  .pass-main { padding: 24px 20px; }
-  .route .code { font-size: 1.7rem; }
+  section.block { padding-block: 64px; }
+  .topbar .btn { display: none; }
+  .facts { gap: 18px; }
+  .parts, .anatomy-grid, .who, form { grid-template-columns: 1fr; }
+  .pass-main { padding: 26px 20px 28px; }
+  .route .code { font-size: 1.8rem; }
+  .stub .val { font-size: 1.5rem; }
 }
 </style>
 </head>
 <body>
-<header class="hero">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></g></symbol>
+  <symbol id="i-suitcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="7" width="17" height="12.5" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h17"/></g></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20H4z"/><path d="M10 20v-5h4v5"/></g></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></g></symbol>
+</svg>
+
+<header class="topbar">
   <div class="wrap">
-    <div>
-      <p class="brand">Come to Australia</p>
-      <h1>מישראל לאוסטרליה</h1>
-      <p class="sub">המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה. 111 פרקים בעברית, מההתלבטות הראשונה ועד השגרה שאחרי. בחינם.</p>
-      <a class="btn" href="#get">קבלו את המדריך</a>
-      <p class="fine">קובץ PDF של כ-2,400 עמודים. המידע נכון לאוקטובר 2026.</p>
-    </div>
-    <div class="cover" aria-hidden="true">
-      <strong>מישראל לאוסטרליה</strong>
-      <span>המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה</span>
-      <em>Come to Australia</em>
-    </div>
+    <a class="mark" href="#top" aria-label="Come to Australia, לראש העמוד">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#f0b429"/><use href="#i-plane" x="14" y="14" width="36" height="36" style="color:#123b38"/></svg>
+      <span class="ltr">Come to Australia</span>
+    </a>
+    <a class="btn small" href="#get">קבלו את המדריך</a>
   </div>
 </header>
 
+<div class="hero" id="top">
+  <svg class="flight" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path class="trail" d="M1130 70 C 900 40, 520 120, 330 330 S 120 520, 70 560"/>
+    <path class="draw" d="M1130 70 C 900 40, 520 120, 330 330 S 120 520, 70 560"/>
+    <circle class="pin" cx="1130" cy="70" r="5"/>
+    <circle class="pin" cx="70" cy="560" r="5"/>
+    <text x="1112" y="56" text-anchor="end">TLV</text>
+    <text x="88" y="586">AUS</text>
+  </svg>
+  <div class="wrap">
+    <div>
+      <h1>מישראל לאוסטרליה</h1>
+      <p class="sub">המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה. 111 פרקים בעברית, מההתלבטות הראשונה ועד השגרה שאחרי. בחינם.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#get">קבלו את המדריך במייל</a>
+      </div>
+      <div class="facts">
+        <div><b>111</b>פרקים</div>
+        <div><b>18</b>חלקים</div>
+        <div><b>2,400</b>עמודים</div>
+        <div><b>0 ₪</b>מחיר</div>
+      </div>
+    </div>
+    <div class="book" aria-hidden="true">
+      <div class="cover">
+        <div class="t">מישראל לאוסטרליה</div>
+        <div class="rule"></div>
+        <div class="s">המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה</div>
+        <div class="foot"><span>המידע נכון לאוקטובר 2026</span><b>Come to Australia</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <main>
-  <section>
+  <section class="block">
     <div class="wrap">
-      <h2>מה יש בפנים</h2>
-      <p class="lead">ויזות, דירה, בתי ספר, רפואה, עבודה, מסים, כשרות וגעגועים. כל פרק נגמר בצעדים מעשיים, במילים שכדאי להכיר ובמקורות שאפשר לבדוק.</p>
+      <div class="head">
+        <h2>מה יש בפנים</h2>
+        <p class="lead">ויזות, דירה, בתי ספר, רפואה, עבודה, מסים, כשרות וגעגועים, בסדר שבו הם קורים בחיים.</p>
+      </div>
       <ul class="parts">
-        <li><b>לפני ההחלטה</b><small>פרקים <bdi dir="ltr">1–3</bdi></small></li>
-        <li><b>זכאות וויזות</b><small>פרקים <bdi dir="ltr">4–7</bdi></small></li>
-        <li><b>הכנות בישראל</b><small>פרקים <bdi dir="ltr">8–11</bdi></small></li>
-        <li><b>נחיתה: החודשים הראשונים</b><small>פרקים <bdi dir="ltr">12–15</bdi></small></li>
-        <li><b>ממשל ובירוקרטיה</b><small>פרקים <bdi dir="ltr">16–19</bdi></small></li>
-        <li><b>בית ושכונה</b><small>פרקים <bdi dir="ltr">20–29</bdi></small></li>
-        <li><b>ילדים וחינוך</b><small>פרקים <bdi dir="ltr">30–37</bdi></small></li>
-        <li><b>רפואה ובריאות</b><small>פרקים <bdi dir="ltr">38–46</bdi></small></li>
-        <li><b>נהיגה ותחבורה</b><small>פרקים <bdi dir="ltr">47–54</bdi></small></li>
-        <li><b>עבודה וקריירה</b><small>פרקים <bdi dir="ltr">55–61</bdi></small></li>
-        <li><b>כסף, מסים ופיננסים</b><small>פרקים <bdi dir="ltr">62–70</bdi></small></li>
-        <li><b>שירות, צרכנות וטכנולוגיה</b><small>פרקים <bdi dir="ltr">71–74</bdi></small></li>
-        <li><b>אוכל</b><small>פרקים <bdi dir="ltr">75–80</bdi></small></li>
-        <li><b>תרבות, מנטליות ושפה</b><small>פרקים <bdi dir="ltr">81–89</bdi></small></li>
-        <li><b>קהילה וחיים חברתיים</b><small>פרקים <bdi dir="ltr">90–94</bdi></small></li>
-        <li><b>נפש ורגש</b><small>פרקים <bdi dir="ltr">95–100</bdi></small></li>
-        <li><b>ביטחון, חירום ומצבים מיוחדים</b><small>פרקים <bdi dir="ltr">101–107</bdi></small></li>
-        <li><b>נספחים: מילונים, טבלאות, צ׳קליסטים</b><small>פרקים <bdi dir="ltr">108–111</bdi></small></li>
+        <li><i>א׳</i><b>לפני ההחלטה</b><small>פרקים <bdi dir="ltr">1–3</bdi></small></li>
+        <li><i>ב׳</i><b>זכאות וויזות</b><small>פרקים <bdi dir="ltr">4–7</bdi></small></li>
+        <li><i>ג׳</i><b>הכנות בישראל</b><small>פרקים <bdi dir="ltr">8–11</bdi></small></li>
+        <li><i>ד׳</i><b>נחיתה: החודשים הראשונים</b><small>פרקים <bdi dir="ltr">12–15</bdi></small></li>
+        <li><i>ה׳</i><b>ממשל ובירוקרטיה</b><small>פרקים <bdi dir="ltr">16–19</bdi></small></li>
+        <li><i>ו׳</i><b>בית ושכונה</b><small>פרקים <bdi dir="ltr">20–29</bdi></small></li>
+        <li><i>ז׳</i><b>ילדים וחינוך</b><small>פרקים <bdi dir="ltr">30–37</bdi></small></li>
+        <li><i>ח׳</i><b>רפואה ובריאות</b><small>פרקים <bdi dir="ltr">38–46</bdi></small></li>
+        <li><i>ט׳</i><b>נהיגה ותחבורה</b><small>פרקים <bdi dir="ltr">47–54</bdi></small></li>
+        <li><i>י׳</i><b>עבודה וקריירה</b><small>פרקים <bdi dir="ltr">55–61</bdi></small></li>
+        <li><i>י״א</i><b>כסף, מסים ופיננסים</b><small>פרקים <bdi dir="ltr">62–70</bdi></small></li>
+        <li><i>י״ב</i><b>שירות, צרכנות וטכנולוגיה</b><small>פרקים <bdi dir="ltr">71–74</bdi></small></li>
+        <li><i>י״ג</i><b>אוכל</b><small>פרקים <bdi dir="ltr">75–80</bdi></small></li>
+        <li><i>י״ד</i><b>תרבות, מנטליות ושפה</b><small>פרקים <bdi dir="ltr">81–89</bdi></small></li>
+        <li><i>ט״ו</i><b>קהילה וחיים חברתיים</b><small>פרקים <bdi dir="ltr">90–94</bdi></small></li>
+        <li><i>ט״ז</i><b>נפש ורגש</b><small>פרקים <bdi dir="ltr">95–100</bdi></small></li>
+        <li><i>י״ז</i><b>ביטחון, חירום ומצבים מיוחדים</b><small>פרקים <bdi dir="ltr">101–107</bdi></small></li>
+        <li><i>י״ח</i><b>נספחים: מילונים, טבלאות, צ׳קליסטים</b><small>פרקים <bdi dir="ltr">108–111</bdi></small></li>
       </ul>
     </div>
   </section>
 
-  <section>
+  <section class="block anatomy">
     <div class="wrap">
-      <h2>למי זה מתאים</h2>
-      <div class="who">
-        <p><b>שוקלים</b>עוד לא החלטתם, ורוצים לדעת מה באמת מחכה שם.</p>
-        <p><b>בתהליך</b>ויזה, אריזה, דירה, בית ספר: הכול קורה בבת אחת.</p>
-        <p><b>כבר כאן</b>נחתתם, והחודשים הראשונים קשים ממה שחשבתם.</p>
+      <div class="head">
+        <h2>כך בנוי פרק</h2>
+        <p class="lead">אותו מבנה בכל הספר, כדי שתמצאו מהר את מה שאתם צריכים.</p>
+      </div>
+      <div class="anatomy-grid">
+        <div><h3>בקצרה</h3><p>העיקר בכמה שורות, למי שאין זמן לקרוא הכול עכשיו.</p></div>
+        <div><h3>ההבדל מישראל</h3><p>מה עובד אחרת ממה שאתם רגילים, ולמה זה חשוב.</p></div>
+        <div><h3>מהשטח</h3><p>סיפור של משפחה שעברה את זה, עם הטעויות וההצלחות.</p></div>
+        <div><h3>טעויות נפוצות</h3><p>מה הכי קל לפספס, ואיך לא ליפול בזה.</p></div>
+        <div><h3>מילים שכדאי להכיר</h3><p>המונחים באנגלית שתשמעו בטלפון ובטפסים.</p></div>
+        <div><h3>מקורות</h3><p>כל עובדה נבדקה מול דפים רשמיים, והמקורות מופיעים בסוף הספר.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="pass-section" id="get">
+  <section class="block">
     <div class="wrap">
-      <h2>המדריך מחכה לכם</h2>
-      <p class="lead">השאירו שם ואימייל, ונשלח לכם את המדריך במייל.</p>
+      <div class="head"><h2>למי זה מתאים</h2></div>
+      <div class="who">
+        <article><svg aria-hidden="true"><use href="#i-compass"/></svg><h3>שוקלים</h3><p>עוד לא החלטתם, ורוצים לדעת מה באמת מחכה שם.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-suitcase"/></svg><h3>בתהליך</h3><p>ויזה, אריזה, דירה, בית ספר: הכול קורה בבת אחת.</p></article>
+        <article><svg aria-hidden="true"><use href="#i-home"/></svg><h3>כבר כאן</h3><p>נחתתם, והחודשים הראשונים קשים ממה שחשבתם.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block get" id="get">
+    <div class="wrap">
+      <div class="head">
+        <h2>המדריך מחכה לכם</h2>
+        <p class="lead">השאירו שם ואימייל, ונשלח לכם את המדריך במייל.</p>
+      </div>
       <div class="pass">
+        <span class="notch top" aria-hidden="true"></span><span class="notch bottom" aria-hidden="true"></span>
         <div class="pass-main">
           <div class="route" aria-hidden="true">
             <div><span class="code">TLV</span><span class="city">תל אביב</span></div>
-            <div class="plane"></div>
+            <div class="route-line">
+              <svg viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M290 32 Q150 -4 10 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 7" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+              <svg class="plane-ic"><use href="#i-plane"/></svg>
+            </div>
             <div><span class="code">AUS</span><span class="city">אוסטרליה</span></div>
           </div>
           <form id="signup" novalidate>
@@ -211,22 +349,22 @@ footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
             <label class="consent full"><input id="consent" name="consent" type="checkbox">
               <span>אשמח לקבל מ-Come to Australia מיילים על המעבר לאוסטרליה. אפשר להסיר בכל רגע.</span></label>
             <p class="error full" id="error" role="alert" hidden></p>
-            <div class="full"><button class="btn" type="submit" id="submit">קבלו את המדריך</button></div>
+            <div class="full submit-row"><button class="btn" type="submit" id="submit">שלחו לי את המדריך</button><small>המדריך מגיע למייל תוך דקה או שתיים.</small></div>
           </form>
           <div class="done" id="done" hidden tabindex="-1">
-            <h3 id="thanks">תודה! המדריך בדרך אליכם.</h3>
+            <div class="ok"><svg aria-hidden="true"><use href="#i-mail"/></svg><h3 id="thanks">תודה! המדריך בדרך אליכם.</h3></div>
             <p id="sent">שלחנו את המדריך לכתובת שכתבתם. בדקו את תיבת הדואר בעוד דקה או שתיים, וגם את התיקיות „קידומי מכירות” ו„ספאם”.</p>
             <p>המייל מגיע מ-<span class="ltr">hello@cometoaustralia.fyi</span>. לא הגיע? כתבו לנו לשם, ונשלח שוב.</p>
             <div class="meet">
               <p><b>רוצים לדבר על המצב שלכם?</b> פגישת היכרות של 30 דקות בזום, חינם ובלי התחייבות.</p>
-              <p style="margin-top:12px"><a class="btn ghost" href="https://calendly.com/come-to-australia?utm_source=landing" target="_blank" rel="noopener">קבעו פגישה</a></p>
+              <p><a class="btn ghost" href="https://calendly.com/come-to-australia?utm_source=landing" target="_blank" rel="noopener">קבעו פגישה</a></p>
             </div>
           </div>
         </div>
         <div class="stub" aria-hidden="true">
           <div><div class="label">עמודים</div><div class="val">2,400</div></div>
           <div><div class="label">פרקים</div><div class="val">111</div></div>
-          <div><div class="label">מחיר</div><div class="val">0 ₪</div></div>
+          <div><div class="label">מחיר</div><div class="val gold">0 ₪</div></div>
         </div>
       </div>
       <p class="privacy">נשתמש באימייל כדי לשלוח לכם את המדריך. עדכונים נוספים נשלח רק אם סימנתם את התיבה.</p>
@@ -236,6 +374,7 @@ footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
 
 <footer>
   <div class="wrap">
+    <a class="mark" href="#top"><span class="ltr">Come to Australia</span></a>
     <p>Come to Australia מלווה ומכוונת. אנחנו לא סוכני הגירה רשומים ולא נותנים ייעוץ ויזה; בשאלות ויזה פנו לסוכן הגירה רשום.</p>
     <p class="contacts">
       <a class="ltr" href="mailto:hello@cometoaustralia.fyi">hello@cometoaustralia.fyi</a>
@@ -253,6 +392,8 @@ const CONSENT_VALUE = "אשמח לקבל מ-Come to Australia מיילים על 
 
 const form = document.getElementById("signup");
 const err = document.getElementById("error");
+const button = document.getElementById("submit");
+const LABEL = button.textContent;
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -270,7 +411,6 @@ form.addEventListener("submit", async (e) => {
   body.append(`entry.${ENTRY.email}`, email);
   if (form.stage.value) body.append(`entry.${ENTRY.stage}`, form.stage.value);
   if (form.consent.checked) body.append(`entry.${ENTRY.consent}`, CONSENT_VALUE);
-  const button = document.getElementById("submit");
   button.disabled = true;
   button.textContent = "שולחים…";
   try {
@@ -280,7 +420,7 @@ form.addEventListener("submit", async (e) => {
     err.textContent = "השליחה לא עברה. בדקו את החיבור לאינטרנט ונסו שוב.";
     err.hidden = false;
     button.disabled = false;
-    button.textContent = "קבלו את המדריך";
+    button.textContent = LABEL;
     return;
   }
   document.getElementById("thanks").textContent = `תודה, ${name}! המדריך בדרך אליכם.`;
