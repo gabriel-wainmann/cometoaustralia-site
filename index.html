@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מישראל לאוסטרליה · המדריך החינמי | Come to Australia</title>
+<meta name="description" content="המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה: 111 פרקים בעברית, בחינם. מאת Come to Australia.">
+<meta property="og:title" content="מישראל לאוסטרליה: המדריך החינמי">
+<meta property="og:description" content="111 פרקים בעברית על ההחלטה, הוויזה, הנחיתה והחיים באוסטרליה. בחינם.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cometoaustralia.fyi/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap">
+<style>
+/* Concept: Australia's green and gold (eucalyptus + wattle) on a pale sky. One bold element:
+   the sign-up form as a boarding pass from Tel Aviv. Everything else stays quiet. */
+:root {
+  --eucalyptus: #1f5c58;
+  --eucalyptus-deep: #143f3c;
+  --wattle: #f0b429;
+  --sky: #f3f7f8;
+  --ink: #1b2826;
+  --paper: #ffffff;
+  --muted: #5b6b68;
+  --line: #d6e2df;
+  --display: "Frank Ruhl Libre", "Noto Serif Hebrew", serif;
+  --body: "Assistant", "Noto Sans Hebrew", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { margin: 0; background: var(--sky); color: var(--ink); font: 18px/1.65 var(--body); }
+a { color: var(--eucalyptus); }
+:focus-visible { outline: 3px solid var(--wattle); outline-offset: 3px; }
+.wrap { max-width: 68rem; margin-inline: auto; padding-inline: max(20px, 4vw); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
+
+/* Hero */
+.hero { background: var(--eucalyptus); color: #fff; padding-block: 56px 72px; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+.brand { font-weight: 700; letter-spacing: .04em; color: var(--wattle); margin: 0 0 28px; direction: ltr; text-align: right; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 900; }
+.hero .sub { font-size: 1.25rem; margin: 18px 0 30px; max-width: 34rem; color: #e4efec; }
+.btn { display: inline-block; font: 700 1.1rem var(--body); text-decoration: none; border: 0; cursor: pointer;
+  background: var(--wattle); color: var(--eucalyptus-deep); padding: 14px 28px; border-radius: 999px; }
+.btn:hover { background: #f6c64f; }
+.btn.ghost { background: transparent; color: var(--eucalyptus); box-shadow: inset 0 0 0 2px var(--eucalyptus); }
+.btn.ghost:hover { background: var(--eucalyptus); color: #fff; }
+.fine { font-size: .92rem; color: #cfe0dc; margin: 14px 0 0; }
+.cover { justify-self: center; width: min(300px, 100%); aspect-ratio: 17 / 24; background: var(--paper); color: var(--eucalyptus);
+  border-radius: 6px 14px 14px 6px; padding: 34px 28px; display: flex; flex-direction: column; justify-content: space-between;
+  box-shadow: -18px 22px 0 var(--eucalyptus-deep); border-right: 10px solid var(--wattle); transform: rotate(-3deg); }
+.cover strong { font: 900 2rem/1.1 var(--display); }
+.cover span { font-size: .95rem; color: var(--muted); }
+.cover em { font-style: normal; font-weight: 700; direction: ltr; text-align: right; color: var(--eucalyptus); }
+
+/* Sections */
+section { padding-block: 64px; }
+.lead { font-size: 1.15rem; max-width: 42rem; color: var(--muted); margin: 14px 0 0; }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); color: var(--eucalyptus); }
+.parts { list-style: none; padding: 0; margin: 34px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 36px; }
+.parts li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.parts b { font-weight: 600; }
+.parts small { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 30px; }
+.who p { margin: 0; padding-top: 14px; border-top: 4px solid var(--wattle); font-size: 1.1rem; }
+.who b { display: block; font-family: var(--display); font-size: 1.35rem; color: var(--eucalyptus); }
+
+/* Boarding pass */
+.pass-section { background: var(--paper); }
+.pass { display: grid; grid-template-columns: 1fr 220px; background: var(--sky); border-radius: 18px; margin-top: 30px;
+  border: 1px solid var(--line); position: relative; }
+.pass-main { padding: 30px 34px; }
+.route { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; font-family: var(--display); }
+.route .code { font-size: 2.2rem; font-weight: 900; color: var(--eucalyptus); direction: ltr; }
+.route .city { display: block; font: 600 .95rem var(--body); color: var(--muted); }
+.route .plane { flex: 1; height: 2px; background: repeating-linear-gradient(to left, var(--eucalyptus) 0 8px, transparent 8px 14px); position: relative; }
+.route .plane::after { content: "✈"; position: absolute; inset-inline-end: 45%; top: -15px; font-size: 1.3rem; color: var(--eucalyptus); transform: scaleX(-1); }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+label { display: grid; gap: 6px; font-weight: 600; font-size: .98rem; }
+.full { grid-column: 1 / -1; }
+input[type=text], input[type=email], select { font: 400 1.05rem var(--body); padding: 12px 14px; border: 1.5px solid #b9cbc7;
+  border-radius: 10px; background: var(--paper); color: var(--ink); width: 100%; }
+input:focus, select:focus { border-color: var(--eucalyptus); outline: none; box-shadow: 0 0 0 3px #f0b42966; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: .95rem; color: var(--muted); }
+.consent input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--eucalyptus); }
+.error { color: #a12b2b; font-weight: 600; margin: 0; }
+.stub { border-inline-start: 2px dashed #b9cbc7; padding: 30px 22px; display: flex; flex-direction: column; justify-content: center; gap: 10px; text-align: center; }
+.stub .label { color: var(--muted); font-size: .9rem; }
+.stub .val { font: 900 1.6rem var(--display); color: var(--eucalyptus); }
+.pass::before, .pass::after { content: ""; position: absolute; width: 26px; height: 26px; border-radius: 50%; background: var(--paper);
+  inset-inline-end: 207px; border: 1px solid var(--line); }
+.pass::before { top: -14px; } .pass::after { bottom: -14px; }
+
+.done { display: grid; gap: 18px; }
+.done h3 { font-size: 1.8rem; color: var(--eucalyptus); }
+.done p { margin: 0; }
+.meet { margin-top: 10px; padding-top: 18px; border-top: 1px solid var(--line); }
+.privacy { font-size: .9rem; color: var(--muted); margin: 14px 0 0; }
+
+footer { background: var(--eucalyptus-deep); color: #d9e7e4; padding-block: 40px; font-size: .95rem; }
+footer .wrap { display: grid; gap: 12px; }
+footer a { color: var(--wattle); }
+footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.ltr { direction: ltr; unicode-bidi: isolate; }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .cover { width: 220px; order: -1; justify-self: start; }
+  .parts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .who { grid-template-columns: 1fr; gap: 18px; }
+  .pass { grid-template-columns: 1fr; }
+  .stub { border-inline-start: 0; border-top: 2px dashed #b9cbc7; flex-direction: row; justify-content: space-around; }
+  .pass::before, .pass::after { display: none; }
+}
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .parts { grid-template-columns: 1fr; }
+  form { grid-template-columns: 1fr; }
+  .pass-main { padding: 24px 20px; }
+  .route .code { font-size: 1.7rem; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="brand">Come to Australia</p>
+      <h1>מישראל לאוסטרליה</h1>
+      <p class="sub">המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה. 111 פרקים בעברית, מההתלבטות הראשונה ועד השגרה שאחרי. בחינם.</p>
+      <a class="btn" href="#get">קבלו את המדריך</a>
+      <p class="fine">קובץ PDF של כ-2,400 עמודים. המידע נכון לאוקטובר 2026.</p>
+    </div>
+    <div class="cover" aria-hidden="true">
+      <strong>מישראל לאוסטרליה</strong>
+      <span>המדריך המלא להגירה, לנחיתה ולחיים באוסטרליה</span>
+      <em>Come to Australia</em>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>מה יש בפנים</h2>
+      <p class="lead">ויזות, דירה, בתי ספר, רפואה, עבודה, מסים, כשרות וגעגועים. כל פרק נגמר בצעדים מעשיים, במילים שכדאי להכיר ובמקורות שאפשר לבדוק.</p>
+      <ul class="parts">
+        <li><b>לפני ההחלטה</b><small>פרקים <bdi dir="ltr">1–3</bdi></small></li>
+        <li><b>זכאות וויזות</b><small>פרקים <bdi dir="ltr">4–7</bdi></small></li>
+        <li><b>הכנות בישראל</b><small>פרקים <bdi dir="ltr">8–11</bdi></small></li>
+        <li><b>נחיתה: החודשים הראשונים</b><small>פרקים <bdi dir="ltr">12–15</bdi></small></li>
+        <li><b>ממשל ובירוקרטיה</b><small>פרקים <bdi dir="ltr">16–19</bdi></small></li>
+        <li><b>בית ושכונה</b><small>פרקים <bdi dir="ltr">20–29</bdi></small></li>
+        <li><b>ילדים וחינוך</b><small>פרקים <bdi dir="ltr">30–37</bdi></small></li>
+        <li><b>רפואה ובריאות</b><small>פרקים <bdi dir="ltr">38–46</bdi></small></li>
+        <li><b>נהיגה ותחבורה</b><small>פרקים <bdi dir="ltr">47–54</bdi></small></li>
+        <li><b>עבודה וקריירה</b><small>פרקים <bdi dir="ltr">55–61</bdi></small></li>
+        <li><b>כסף, מסים ופיננסים</b><small>פרקים <bdi dir="ltr">62–70</bdi></small></li>
+        <li><b>שירות, צרכנות וטכנולוגיה</b><small>פרקים <bdi dir="ltr">71–74</bdi></small></li>
+        <li><b>אוכל</b><small>פרקים <bdi dir="ltr">75–80</bdi></small></li>
+        <li><b>תרבות, מנטליות ושפה</b><small>פרקים <bdi dir="ltr">81–89</bdi></small></li>
+        <li><b>קהילה וחיים חברתיים</b><small>פרקים <bdi dir="ltr">90–94</bdi></small></li>
+        <li><b>נפש ורגש</b><small>פרקים <bdi dir="ltr">95–100</bdi></small></li>
+        <li><b>ביטחון, חירום ומצבים מיוחדים</b><small>פרקים <bdi dir="ltr">101–107</bdi></small></li>
+        <li><b>נספחים: מילונים, טבלאות, צ׳קליסטים</b><small>פרקים <bdi dir="ltr">108–111</bdi></small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>למי זה מתאים</h2>
+      <div class="who">
+        <p><b>שוקלים</b>עוד לא החלטתם, ורוצים לדעת מה באמת מחכה שם.</p>
+        <p><b>בתהליך</b>ויזה, אריזה, דירה, בית ספר: הכול קורה בבת אחת.</p>
+        <p><b>כבר כאן</b>נחתתם, והחודשים הראשונים קשים ממה שחשבתם.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pass-section" id="get">
+    <div class="wrap">
+      <h2>המדריך מחכה לכם</h2>
+      <p class="lead">השאירו שם ואימייל, והמדריך נפתח מיד להורדה.</p>
+      <div class="pass">
+        <div class="pass-main">
+          <div class="route" aria-hidden="true">
+            <div><span class="code">TLV</span><span class="city">תל אביב</span></div>
+            <div class="plane"></div>
+            <div><span class="code">AUS</span><span class="city">אוסטרליה</span></div>
+          </div>
+          <form id="signup" novalidate>
+            <label>שם
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </label>
+            <label>אימייל
+              <input id="email" name="email" type="email" autocomplete="email" dir="ltr" required>
+            </label>
+            <label class="full">איפה אתם עומדים?
+              <select id="stage" name="stage">
+                <option value="">לא חובה</option>
+                <option>שוקלים</option>
+                <option>בתהליך</option>
+                <option>כבר באוסטרליה</option>
+              </select>
+            </label>
+            <label class="consent full"><input id="consent" name="consent" type="checkbox">
+              <span>אשמח לקבל מ-Come to Australia מיילים על המעבר לאוסטרליה. אפשר להסיר בכל רגע.</span></label>
+            <p class="error full" id="error" role="alert" hidden></p>
+            <div class="full"><button class="btn" type="submit" id="submit">קבלו את המדריך</button></div>
+          </form>
+          <div class="done" id="done" hidden tabindex="-1">
+            <h3 id="thanks">תודה! המדריך שלכם מוכן.</h3>
+            <p><a class="btn" id="download" href="#" target="_blank" rel="noopener">הורידו את המדריך (PDF)</a></p>
+            <p>הקובץ נפתח ב-Google Drive. שמרו אותו, ומותר להעביר אותו הלאה.</p>
+            <div class="meet">
+              <p><b>רוצים לדבר על המצב שלכם?</b> פגישת היכרות של 30 דקות בזום, חינם ובלי התחייבות.</p>
+              <p style="margin-top:12px"><a class="btn ghost" href="https://calendly.com/come-to-australia?utm_source=landing" target="_blank" rel="noopener">קבעו פגישה</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="stub" aria-hidden="true">
+          <div><div class="label">עמודים</div><div class="val">2,400</div></div>
+          <div><div class="label">פרקים</div><div class="val">111</div></div>
+          <div><div class="label">מחיר</div><div class="val">0 ₪</div></div>
+        </div>
+      </div>
+      <p class="privacy">הפרטים נשמרים אצל Come to Australia ומשמשים רק כדי לשלוח לכם עדכונים, אם אישרתם.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Come to Australia מלווה ומכוונת. אנחנו לא סוכני הגירה רשומים ולא נותנים ייעוץ ויזה; בשאלות ויזה פנו לסוכן הגירה רשום.</p>
+    <p class="contacts">
+      <a class="ltr" href="mailto:hello@cometoaustralia.fyi">hello@cometoaustralia.fyi</a>
+      <a class="ltr" href="https://calendly.com/come-to-australia?utm_source=landing" target="_blank" rel="noopener">calendly.com/come-to-australia</a>
+    </p>
+    <p class="ltr">© 2026 Come to Australia</p>
+  </div>
+</footer>
+
+<script>
+// Filled from the Google Form (entry ids) and the shared Drive file.
+const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdayneHlD_H_5Pkqe02IUVNRP-edS7M8_w3xJiiMnZGBGfaPw/formResponse";
+const ENTRY = { name: "952039882", email: "1795978272", stage: "332524372", consent: "1159416017" };
+const CONSENT_VALUE = "אשמח לקבל מ-Come to Australia מיילים על המעבר לאוסטרליה. אפשר להסיר בכל רגע.";
+const DOWNLOAD_URL = "https://drive.google.com/file/d/1P6q6XmZDHH_paVr9QdEWzahrBmBWZAPw/view";
+
+const form = document.getElementById("signup");
+const err = document.getElementById("error");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    err.textContent = !name ? "חסר שם. כתבו את שמכם ונסו שוב." : "כתובת האימייל לא תקינה. בדקו אותה ונסו שוב.";
+    err.hidden = false;
+    (!name ? form.name : form.email).focus();
+    return;
+  }
+  err.hidden = true;
+  const body = new FormData();
+  body.append(`entry.${ENTRY.name}`, name);
+  body.append(`entry.${ENTRY.email}`, email);
+  if (form.stage.value) body.append(`entry.${ENTRY.stage}`, form.stage.value);
+  if (form.consent.checked) body.append(`entry.${ENTRY.consent}`, CONSENT_VALUE);
+  const button = document.getElementById("submit");
+  button.disabled = true;
+  button.textContent = "שולחים…";
+  try {
+    // Google Forms gives no readable answer across sites; a network failure is the only error we can see.
+    await fetch(FORM_ACTION, { method: "POST", mode: "no-cors", body });
+  } catch (_) {
+    err.textContent = "השליחה לא עברה. בדקו את החיבור לאינטרנט ונסו שוב.";
+    err.hidden = false;
+    button.disabled = false;
+    button.textContent = "קבלו את המדריך";
+    return;
+  }
+  document.getElementById("download").href = DOWNLOAD_URL;
+  document.getElementById("thanks").textContent = `תודה, ${name}! המדריך שלכם מוכן.`;
+  form.hidden = true;
+  const done = document.getElementById("done");
+  done.hidden = false;
+  done.focus();
+});
+</script>
+</body>
+</html>
