@@ -185,7 +185,7 @@ footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
   <section class="pass-section" id="get">
     <div class="wrap">
       <h2>המדריך מחכה לכם</h2>
-      <p class="lead">השאירו שם ואימייל, והמדריך נפתח מיד להורדה.</p>
+      <p class="lead">השאירו שם ואימייל, ונשלח לכם את המדריך במייל.</p>
       <div class="pass">
         <div class="pass-main">
           <div class="route" aria-hidden="true">
@@ -214,9 +214,9 @@ footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
             <div class="full"><button class="btn" type="submit" id="submit">קבלו את המדריך</button></div>
           </form>
           <div class="done" id="done" hidden tabindex="-1">
-            <h3 id="thanks">תודה! המדריך שלכם מוכן.</h3>
-            <p><a class="btn" id="download" href="#" target="_blank" rel="noopener">הורידו את המדריך (PDF)</a></p>
-            <p>הקובץ נפתח ב-Google Drive. שמרו אותו, ומותר להעביר אותו הלאה.</p>
+            <h3 id="thanks">תודה! המדריך בדרך אליכם.</h3>
+            <p id="sent">שלחנו את המדריך לכתובת שכתבתם. בדקו את תיבת הדואר בעוד דקה או שתיים, וגם את התיקיות „קידומי מכירות” ו„ספאם”.</p>
+            <p>המייל מגיע מ-<span class="ltr">hello@cometoaustralia.fyi</span>. לא הגיע? כתבו לנו לשם, ונשלח שוב.</p>
             <div class="meet">
               <p><b>רוצים לדבר על המצב שלכם?</b> פגישת היכרות של 30 דקות בזום, חינם ובלי התחייבות.</p>
               <p style="margin-top:12px"><a class="btn ghost" href="https://calendly.com/come-to-australia?utm_source=landing" target="_blank" rel="noopener">קבעו פגישה</a></p>
@@ -229,7 +229,7 @@ footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
           <div><div class="label">מחיר</div><div class="val">0 ₪</div></div>
         </div>
       </div>
-      <p class="privacy">הפרטים נשמרים אצל Come to Australia ומשמשים רק כדי לשלוח לכם עדכונים, אם אישרתם.</p>
+      <p class="privacy">נשתמש באימייל כדי לשלוח לכם את המדריך. עדכונים נוספים נשלח רק אם סימנתם את התיבה.</p>
     </div>
   </section>
 </main>
@@ -246,11 +246,10 @@ footer .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
 </footer>
 
 <script>
-// Filled from the Google Form (entry ids) and the shared Drive file.
+// Google Form entry ids. The guide itself is sent by email (Apps Script on the form).
 const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdayneHlD_H_5Pkqe02IUVNRP-edS7M8_w3xJiiMnZGBGfaPw/formResponse";
 const ENTRY = { name: "952039882", email: "1795978272", stage: "332524372", consent: "1159416017" };
 const CONSENT_VALUE = "אשמח לקבל מ-Come to Australia מיילים על המעבר לאוסטרליה. אפשר להסיר בכל רגע.";
-const DOWNLOAD_URL = "https://drive.google.com/file/d/1P6q6XmZDHH_paVr9QdEWzahrBmBWZAPw/view";
 
 const form = document.getElementById("signup");
 const err = document.getElementById("error");
@@ -284,8 +283,8 @@ form.addEventListener("submit", async (e) => {
     button.textContent = "קבלו את המדריך";
     return;
   }
-  document.getElementById("download").href = DOWNLOAD_URL;
-  document.getElementById("thanks").textContent = `תודה, ${name}! המדריך שלכם מוכן.`;
+  document.getElementById("thanks").textContent = `תודה, ${name}! המדריך בדרך אליכם.`;
+  document.getElementById("sent").textContent = `שלחנו את המדריך ל-${email}. בדקו את תיבת הדואר בעוד דקה או שתיים, וגם את התיקיות „קידומי מכירות” ו„ספאם”.`;
   form.hidden = true;
   const done = document.getElementById("done");
   done.hidden = false;
